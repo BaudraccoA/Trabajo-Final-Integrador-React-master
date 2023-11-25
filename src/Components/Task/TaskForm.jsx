@@ -1,9 +1,17 @@
+
 import React, { useState } from 'react';
 import './TaskForm.css';
 
-const TaskForm = ({onAddTask}) => {
+const TaskForm = ({ onAddTask }) => {
   const [newTaskDescription, setNewTaskDescription] = useState('');
 
+  const handleButtonClick = () => {
+    // Verificar que haya una descripción antes de agregar la tarea
+    if (newTaskDescription.trim() !== '') {
+      onAddTask(newTaskDescription);
+      setNewTaskDescription('');
+    }
+  };
 
   //Para guardar en el Local Storage del navegador el valor.
   const handleSubmit = (e) => {
@@ -11,34 +19,19 @@ const TaskForm = ({onAddTask}) => {
     localStorage.setItem('tasks', newTaskDescription );
     setNewTaskDescription('');
     onAddTask(newTaskDescription)
-  };
-
-  // Con enter se agrega la tarea una vez escrita en el input
-  /*const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      handleAddTask();
-    }
-  };*/
+    };
 
   return (
     <div className="todo-list-container">
-      <div className="header">
-        <div className="title">Todo List</div>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Nueva tarea"
-            value={newTaskDescription}
-            onChange={(e) => setNewTaskDescription(e.target.value)}
-           // onKeyDown={handleKeyDown}
-          />
-          <button className="add-button" >
-            +
+     <div className="header">
+      <div className="title">Todo List</div>
+        <div className="add-button-container">
+         <button className="add-button" onClick={handleButtonClick}>
+           +
           </button>
-          </form>
         </div>
       </div>
- 
+    </div>
   );
 };
 

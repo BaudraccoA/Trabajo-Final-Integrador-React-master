@@ -2,7 +2,7 @@ import React from 'react';
 import './TaskList.css';
 import TaskItem from './TaskItem';
 
-const TaskList = ({ tasks, onTaskComplete, onDeleteTask }) => {
+const TaskList = ({ tasks, onTaskComplete, onDeleteTask, onEditTask, editingTaskId }) => {
   return (
     <div className="task-list-container">
       <div className='vertical-line'></div>
@@ -14,6 +14,7 @@ const TaskList = ({ tasks, onTaskComplete, onDeleteTask }) => {
             task={task}
             onTaskComplete={onTaskComplete}
             onDeleteTask={onDeleteTask}
+            onEditTask={onEditTask}
           />
         ))}
       </div>
