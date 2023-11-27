@@ -31,3 +31,16 @@
   }
   
   
+  /* Nuevos estilos para el input al final de la página */
+  .new-task-input-bottom {
+    margin-top: 20px; /* Ajusta la separación desde el contenido anterior */
+  }
+  
+  .new-task-input-bottom input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }

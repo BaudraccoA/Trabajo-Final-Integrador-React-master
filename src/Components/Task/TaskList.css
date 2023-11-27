@@ -1,5 +1,7 @@
+
 body {
-    margin: 0; /* Elimina el margen por defecto del body */
+    margin:100px;   
+  
   }
   
   .task-list-container {

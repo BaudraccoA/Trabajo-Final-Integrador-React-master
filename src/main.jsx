@@ -10,7 +10,7 @@ const MainApp = () => {
  { id: 3, description: 'Do some stupid things' },
  { id: 4, description: 'Create a stunning app' },
  { id: 5, description: 'Design my webside' }, 
- { id: 6, description: 'New task.....' },
+ { id: 6, description: 'After Task' },
  
 // ... Otras tareas
  ]);
@@ -33,9 +33,7 @@ const handleAddTask = (newTaskDescription) => {
  setTasks([... tasks, newTask]);
  };
 
- /*const handleEditTask = (taskId, description) => {
-  setEditingTaskId({ id: taskId, description });
-};*/
+ 
 const handleEditTask = (taskId, description) => {
   const updatedTasks = tasks.map((task) =>
     task.id === taskId ? { ...task, description } : task
@@ -48,7 +46,7 @@ const handleSaveEdit = (taskId, newDescription) => {
     task.id === taskId ? { ...task, description: newDescription } : task
   );
   setTasks(updatedTasks);
-  /*setEditingTaskId(null);*/
+  
 };
 
 const handleDeleteTask = (taskId) => {
@@ -60,15 +58,16 @@ const handleDeleteTask = (taskId) => {
 return (
  <React.StrictMode>
  <TaskForm onAddTask={handleAddTask}/>
- <TaskList tasks={tasks}
+ <TaskList 
+  tasks={tasks}
   onTaskComplete={handleTaskComplete}
   onDeleteTask={handleDeleteTask}
   onEditTask={handleEditTask}
-  onSaveEdit={handleSaveEdit}
-  /*editingTaskId={editingTaskId}*/ />
+  onSaveEdit={handleSaveEdit} 
+  onAddTask={handleAddTask}
+  />
  </React.StrictMode>
  );
 };
 
 ReactDOM.createRoot(document.getElementById('root')).render(<MainApp />);
-

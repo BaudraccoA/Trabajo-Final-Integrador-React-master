@@ -57,6 +57,7 @@ import './TaskItem.css';
           </>
         ) : (
           <div onClick={handleEdit}>{task.description}</div>
+
         )}
       </div>
       <div className="delete-button" onClick={() => onDeleteTask(task.id)}>
