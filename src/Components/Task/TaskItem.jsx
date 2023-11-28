@@ -1,18 +1,29 @@
-import React, { useState } from 'react';
-import './TaskItem.css';
+import React, { useState, useEffect } from 'react';
+import './TaskItem.css'
 
-  const TaskItem = ({ task, onTaskComplete, onDeleteTask, onEditTask }) => {
-    const [isEditing, setIsEditing] = useState(false);
-    const [editedDescription, setEditedDescription] = useState(task.description);
+const TaskItem = ({ task, onTaskComplete, onDeleteTask, onEditTask }) => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedDescription, setEditedDescription] = useState(task.description);
+  const [blockClick, setBlockClick] = useState(false);
+  const [isChecked, setIsChecked] = useState(null);
+
+  useEffect(() => {
+    // Actualizar el estado isChecked cuando cambia la propiedad task.completed
+    setIsChecked(task.completed);
+  }, [task.completed]);
 
   const handleComplete = () => {
-    onTaskComplete(task.id, !task.completed);
+    if (!blockClick) {
+      setIsChecked(isChecked === null ? true : !isChecked);
+      onTaskComplete(task.id, isChecked === null ? true : !isChecked);
+    }
   };
 
   const handleEdit = () => {
-    setIsEditing(true);
-    // Set el valor inicial del campo de edición al valor actual de la tarea
-    setEditedDescription(task.description);
+    if (!blockClick) {
+      setIsEditing(true);
+      setEditedDescription(task.description);
+    }
   };
 
   const handleInputChange = (e) => {
@@ -20,31 +31,35 @@ import './TaskItem.css';
   };
 
   const handleSaveEdit = () => {
-     // Guardar cambios al presionar el botón "+"
-    onEditTask(task.id, editedDescription);
-    setIsEditing(false);
+    if (!blockClick) {
+      onEditTask(task.id, editedDescription);
+      setIsEditing(false);
+    }
   };
 
   const handleBlur = () => {
-    // Guardar cambios al hacer clic fuera del campo de edición
-    handleSaveEdit();
-  };
-
-  const handleKeyDown = (e) => {
-    // Guardar cambios al presionar "Enter"
-    if (e.key === 'Enter') {
+    if (!blockClick) {
       handleSaveEdit();
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (!blockClick && e.key === 'Enter') {
+      handleSaveEdit();
+    }
+  };
 
   return (
-   <div className={`task-row ${task.completed ? 'completed' : ''}`}>
+    <div className={`task-row ${isChecked === true ? 'completed' : ''}`} onClick={() => setBlockClick(!blockClick)}>
       <div className="left-column">
-        <div className="event-square" onClick={handleComplete}></div>
+        <div className="event-square" onClick={handleComplete}>
+          <span className={isChecked === true ? 'tarea-tick' : isChecked === false ? 'tarea-x' : ''}>
+            {isChecked === true ? '✔' : isChecked === false ? '✖' : ''}
+          </span>
+        </div>
       </div>
       <div className="right-column">
-        { isEditing ? (
+        {isEditing ? (
           <>
             <input
               type="text"
@@ -53,22 +68,16 @@ import './TaskItem.css';
               onBlur={handleBlur}
               onKeyDown={handleKeyDown}
             />
-            
           </>
         ) : (
           <div onClick={handleEdit}>{task.description}</div>
-
         )}
       </div>
       <div className="delete-button" onClick={() => onDeleteTask(task.id)}>
-        X
+        {/*se puede agregar x para eliminar la tarea*/}
       </div>
     </div>
   );
 };
 
 export default TaskItem;
-
-
-
-  
