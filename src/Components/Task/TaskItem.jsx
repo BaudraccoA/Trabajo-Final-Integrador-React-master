@@ -5,7 +5,7 @@ const TaskItem = ({ task, onTaskComplete, onDeleteTask, onEditTask }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editedDescription, setEditedDescription] = useState(task.description);
   const [blockClick, setBlockClick] = useState(false);
-  const [isChecked, setIsChecked] = useState(null);
+  const [isChecked, setIsChecked] = useState(task.completed);
 
   useEffect(() => {
     // Actualizar el estado isChecked cuando cambia la propiedad task.completed
@@ -58,7 +58,7 @@ const TaskItem = ({ task, onTaskComplete, onDeleteTask, onEditTask }) => {
           </span>
         </div>
       </div>
-      <div className="right-column">
+      <div className={`right-column ${isChecked === false ? 'completed-task' : ''}`}>
         {isEditing ? (
           <>
             <input
@@ -67,6 +67,7 @@ const TaskItem = ({ task, onTaskComplete, onDeleteTask, onEditTask }) => {
               onChange={handleInputChange}
               onBlur={handleBlur}
               onKeyDown={handleKeyDown}
+              readOnly={!isChecked} 
             />
           </>
         ) : (

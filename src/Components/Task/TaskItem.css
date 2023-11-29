@@ -7,10 +7,9 @@
   .task-row.completed .tarea-tick {
     display: inline-block;
   }
-  
-  .completed-task {
-    color: #aaa; /* Gris suave para texto bloqueado */
-    pointer-events:none; /* Evita acciones del mouse en elementos bloqueados */
+
+  .task-row.completed .right-column div {
+    color: #000; /* Cambia a negro cuando la tarea está completada */
   }
   
   .tarea-x{

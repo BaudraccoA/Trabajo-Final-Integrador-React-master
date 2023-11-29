@@ -17,7 +17,7 @@ const TaskList = ({ tasks, onTaskComplete, onDeleteTask, onEditTask, onSaveEdit,
   };
 
   return (
-    <div className="task-list-container">
+     <div className="task-list-container">
       <div className='vertical-line'></div>
       <div className="folder-sheet">
         <div className="empty-row"></div>
