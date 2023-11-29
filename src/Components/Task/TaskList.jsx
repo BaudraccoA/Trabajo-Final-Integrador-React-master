@@ -19,17 +19,18 @@ const TaskList = ({ tasks, onTaskComplete, onDeleteTask, onEditTask, onSaveEdit,
   return (
      <div className="task-list-container">
       <div className='vertical-line'></div>
-      <div className="folder-sheet">
-        <div className="empty-row"></div>
-        {tasks.map((task) => (
-          <TaskItem
+       <div class="vertical-line-new"></div>
+        <div className="folder-sheet">
+         <div className="empty-row"></div>
+          {tasks.map((task) => (
+           <TaskItem
             key={task.id}
             task={task}
             onTaskComplete={onTaskComplete}
             onDeleteTask={onDeleteTask}
             onEditTask={onEditTask}
             onSaveEdit={onSaveEdit}
-          />
+           />
         ))}
         {/* Nuevo input para agregar tarea al final de la lista */}
         <div className="new-task-input-bottom">

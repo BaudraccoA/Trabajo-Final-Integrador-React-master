@@ -39,7 +39,9 @@ const TaskItem = ({ task, onTaskComplete, onDeleteTask, onEditTask }) => {
 
   const handleBlur = () => {
     if (!blockClick) {
-      handleSaveEdit();
+      // Llama a onAddTask con el valor actual del input
+      onAddTask(editedDescription);
+      setIsEditing(false);
     }
   };
 
@@ -82,3 +84,4 @@ const TaskItem = ({ task, onTaskComplete, onDeleteTask, onEditTask }) => {
 };
 
 export default TaskItem;
+
