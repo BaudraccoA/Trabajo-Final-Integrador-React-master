@@ -102,41 +102,48 @@ Link: https://6567fc94e993844f9e3df85d--dapper-begonia-2d5b3a.netlify.app/
 
 | [<img src="https://github.com/BaudraccoA/Trabajo-Final-Integrador-React-master/assets/105230509/52d68690-9ab1-4bb6-a397-472106da6df7" width=115><br><sub>Alejandro Javier Baudracco</sub>](https://github.com/BaudraccoA)
 
-<em>JOHANNETH ADALIX AROCHA GUACARAN</em>
-<em>DANIELA BASTIAS</em>
-<em>CRISTINA BENITEZ</em>
+<em>JOHANNETH ADALIX AROCHA GUACARAN</em><br>
+<em>DANIELA BASTIAS</em><br>
+<em>CRISTINA BENITEZ</em><br>
 
 ## Profesor: 
 
 <em> Condori José Luis </em>
 
+<hr>
+
 ## Conclusion:
 
 En este trabajo final integrador, quiero destacar varias aspectos importantes: <br>
-1 <strong>Logros y funcionalidades:</strong> quiero destacar la posibilidad de implementar con éxito en el Todo List, la funciones de agregar, eliminar y marcar tareas como completadas,
- filtrarlas y guardarlas en el navegador con el Local Storage. No fue facil diseñar sobre la base de algo ya hecho, fue un desafío increible, donde aprendí a ver los mínimos detalles para
- cumplir con la consigna, aunque seguramente faltan.<br>
 
-2 <strong>Diseño y Experiencia del Usuario (UX):</strong>Creo que se ha podido armar una app accesible para el usuario, donde si bien el diseño fue dado como consigna, a sido un reto, ya
+1 <strong>Logros y funcionalidades:</strong><br>
+<p align="left">Desafíos y Soluciones:quiero destacar la posibilidad de implementar con éxito en el Todo List, la funciones de agregar, eliminar y marcar tareas como completadas,
+ filtrarlas y guardarlas en el navegador con el Local Storage. No fue facil diseñar sobre la base de algo ya hecho, fue un desafío increible, donde aprendí a ver los mínimos detalles para
+ cumplir con la consigna, aunque seguramente faltan.</p>><br>
+
+2 <strong>Diseño y Experiencia del Usuario (UX):</strong><br>
+<p align="left">Creo que se ha podido armar una app accesible para el usuario, donde si bien el diseño fue dado como consigna, a sido un reto, ya
 que hemos tenido que pensar como hacer más funcional al cliente, en un primer momento ( foto de portada) pensamos en generar el ingreso de ls datos del cliente por la parte inferior
 de la aplicación, pero despues, se decidió que apretando el Boton "+" se abra una ventana donde se ingresen los datos de la nueva tarea, es algo más moderno,
 y no impacta tanto en lo visual al usuario. También se decidió dejar en letra gris a la tarea cuando este completada ( marcado con la "x" debido a que de esta manera
 ya no se pueda editar la misma, pero si eliminarla. Se aplico diseño responsivo con CSS Flexbox y media query. Falto tiempo para poder leer documentación
-y armar un diseño con librerias<br>
+y armar un diseño con librerias</p><br>
 
-3 <strong>Estructura del Código y Organización:</strong> acá me falto tiempo para ordenar mejor el código, hay partes o funciones que quedaron sin uso, algunas comentadas 
+3 <strong>Estructura del Código y Organización:</strong><br> 
+<p align="left">acá me falto tiempo para ordenar mejor el código, hay partes o funciones que quedaron sin uso, algunas comentadas 
 y otras no, lo cual en otro momento, haré una limpieza del mismo y lo dejaré ordenado, funciona, pero debería reducir código. Me encanta estos desafío porque
-al principio uno piensa que no puede, después es cuestión de organizarse y cuando empieza a funcional es una alegría inmensa.<br>
+al principio uno piensa que no puede, después es cuestión de organizarse y cuando empieza a funcional es una alegría inmensa.</p><br>
 
-4 <strong>Desafíos y Soluciones:</strong> fueron muchos, desde momentos en que se rompió todo el código y no lo guarde a comenzar de nuevo pero con la lección
+4 <strong>Desafíos y Soluciones:</strong><br> 
+<p align="left">fueron muchos, desde momentos en que se rompió todo el código y no lo guarde a comenzar de nuevo pero con la lección
 ya aprendida. En un momento no me funcionaba el Vite, no me cargaba el node_module lo cual pude solucionarlo exitosamente. Y multiples errores porque me olvidaba
-de importar algo, o renderizar, sintaxís, etc. pero si bien uno pierde tiempo, te ayuda a aprender y a ser critico de uno mismo y no dar nada por sabido.<br>
+de importar algo, o renderizar, sintaxís, etc. pero si bien uno pierde tiempo, te ayuda a aprender y a ser critico de uno mismo y no dar nada por sabido.</p><br>
 
-Finalmente ha sido una excelente experiencia, trabajando en equipo, consultando, armando entre todos reuniones, grupo de WhatsApp, trabajando con el GitHub, etc
+<p align="left">Finalmente ha sido una excelente experiencia, trabajando en equipo, consultando, armando entre todos reuniones, grupo de WhatsApp, trabajando con el GitHub, etc
 hemos tenido contratiempo como todos porque cada uno tiene sus actividades, pero todos hemos aportado un granito de arena a este trabajo.
 En lo personal, han sido semanas de muchas horas en el asiento, frente a la computadora, dejando algunas actividades para poder llegar a entregar,
 si bien faltan algunas cuestiones tpecnicas quizás, lo importante es cumplir con la entrega y la satisfacción de poder entregarlo, no para que quede
-como un trabajo más para el Portafolio, sino para que cada vez que lo vea, sienta que vale la pena esforzarse por lo que a uno le apasiona.
+como un trabajo más para el Portafolio, sino para que cada vez que lo vea, sienta que vale la pena esforzarse por lo que a uno le apasiona.</p>
 
 
 
