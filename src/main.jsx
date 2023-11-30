@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import TaskList from './Components/Task/TaskList';
 import TaskForm from './Components/Task/TaskForm';
 import './index.css'
 
 const MainApp = () => {
- const [tasks, setTasks] = useState([
+  // Recupera las tareas de localStorage al montar el componente
+  const initialTasks =
+    JSON.parse(localStorage.getItem('tasks')) || [
  { id: 1, description: 'Throw away my books' },
  { id: 2, description: 'Recycle my homework' },
  { id: 3, description: 'Do some stupid things' },
@@ -14,9 +16,14 @@ const MainApp = () => {
  { id: 6, description: 'After Task' },
  
 // ... Otras tareas
- ]);
-
+ ];
+ const [tasks, setTasks] = useState(initialTasks);
  const [deleteButtonEnabled, setDeleteButtonEnabled] = useState(false);
+
+  // Guarda las tareas en localStorage cada vez que cambian
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
 
  
  const handleTaskComplete = (taskId, completed) => {

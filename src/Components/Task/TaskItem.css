@@ -21,20 +21,22 @@
     padding:1px;
     text-align:center;
     cursor:pointer;
-    font-size: 15px;
+    font-size: 11px;
     border-radius: 10px;
     height: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+     
   }
-
+  
   /* Media query para pantallas más pequeñas */
 @media only screen and (max-width: 600px) {
   .delete-confirmation {
     height:auto;
   }
 }
+
 
 /* Estilos para los botones */
 .delete-confirmation button {
