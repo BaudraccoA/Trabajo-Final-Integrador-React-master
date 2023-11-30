@@ -1,10 +1,12 @@
 
 body {
-    margin:10%;   
+    margin:10%; 
+    background-color: white;  
   
   }
   
   .task-list-container {
+    background-color: white;
     font-family: 'Fuzzy Bubbles', sans-serif;
     max-width: 30%; 
     margin: auto;
@@ -20,7 +22,7 @@ body {
   .vertical-line {
     position: absolute;
     top: 0;
-    bottom: 37px;
+    bottom:0 ;
     left: 13%;
     transform: translateX(-50%);
     width: 3px;
@@ -32,11 +34,11 @@ body {
   .vertical-line-new {
     position: absolute;
     top: 0;
-    bottom: 37px;
+    bottom: 0;
     left: 14%;
     transform: translateX(-50%);
     width: 1px;
-    background-color: #f4e4e4;
+    background-color: #ecd9d9;
     margin-right: 20px;
   }
   
@@ -79,13 +81,6 @@ body {
     padding: 1vw; /* Espaciado para la descripción de la tarea */
   }
   
-  .new-task-input-bottom{
-    text-align: center;
-    margin-top: 6px;
-    font-size: 14px;
-    color:#9b97a3;
-  
-  }
 
   @media only screen and (max-width: 600px) {
     /* Estilos para pantallas pequeñas */
@@ -98,12 +93,13 @@ body {
     }
    
     .vertical-line {
-      left: 15%; /* Ajusta este valor según sea necesario */
+      left: 15%;
   }
 
   .vertical-line-new {
-      left: 16%; /* Ajusta este valor según sea necesario */
+      left: 16%;
   }
+
     
 }
 

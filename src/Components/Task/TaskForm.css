@@ -31,9 +31,13 @@
   }
   
   
-  /* Nuevos estilos para el input al final de la página */
+  /* Estilos para el input */
   .new-task-input-bottom {
-    margin-top: 20px; /* Ajusta la separación desde el contenido anterior */
+    margin-top: 20px;/* Ajusta la separación desde el contenido anterior */
+    text-align: center;
+    margin-top: 6px;
+    font-size: 14px;
+    color:#9b97a3;
   }
   
   .new-task-input-bottom input {
@@ -44,3 +48,22 @@
     border-radius: 4px;
     box-sizing: border-box;
   }
+
+  .btnAdd {
+    background: linear-gradient(to bottom, #747474, #2f2e2e);
+    color: white;
+    border: 1px solid black;
+    padding: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    
+  }
+
+  .inputTask{
+    display: grid;
+    grid-template-columns: 100%; /* la columna ocupa todo el ancho disponible */
+  }
+  
+  
+  

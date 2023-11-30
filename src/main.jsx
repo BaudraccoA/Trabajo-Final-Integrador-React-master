@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import TaskList from './Components/Task/TaskList';
 import TaskForm from './Components/Task/TaskForm';
+import './index.css'
 
 const MainApp = () => {
  const [tasks, setTasks] = useState([
@@ -15,14 +16,18 @@ const MainApp = () => {
 // ... Otras tareas
  ]);
 
+ const [deleteButtonEnabled, setDeleteButtonEnabled] = useState(false);
+
  
-const handleTaskComplete = (taskId, completed) => {
- 
-const updatedTasks = tasks.map((task) =>
- task.id === taskId ? { ... task, completed } : task
- );
- setTasks(updatedTasks);
- };
+ const handleTaskComplete = (taskId, completed) => {
+  const updatedTasks = tasks.map((task) =>
+    task.id === taskId ? { ...task, completed } : task
+  );
+  setTasks(updatedTasks);
+  if (completed) {
+    setDeleteButtonEnabled(true);
+  }
+};
 
 const handleAddTask = (newTaskDescription) => {
  //lógica para agregar una nueva tarea
@@ -50,10 +55,24 @@ const handleSaveEdit = (taskId, newDescription) => {
 };
 
 const handleDeleteTask = (taskId) => {
- //Filtrar las tareas para eliminar la tarea 
- const updatedTasks = tasks.filter((task) => task.id !== taskId);
- setTasks(updatedTasks);
- };
+  // Filtrar las tareas para eliminar la tarea
+  const updatedTasks = tasks.filter((task) => task.id !== taskId);
+  setTasks(updatedTasks);
+};
+
+const handleDeleteCompletedTask = () => {
+  const completedTaskIds = tasks.filter((task) => task.completed).map((task) => task.id);
+  completedTaskIds.forEach((taskId) => handleDeleteTask(taskId));
+  const updatedTasks = tasks.filter((task) => !task.completed);
+  setTasks(updatedTasks);
+  setDeleteButtonEnabled(false);
+};
+
+const showDeleteConfirmation = (taskId) => {
+  setDeleteConfirmationVisible(true);
+  setTaskIdToDelete(taskId);
+};
+
 
 return (
  <React.StrictMode>
@@ -65,6 +84,8 @@ return (
   onEditTask={handleEditTask}
   onSaveEdit={handleSaveEdit} 
   onAddTask={handleAddTask}
+  deleteButtonEnabled={deleteButtonEnabled}
+  onDeleteConfirmation={showDeleteConfirmation}
   />
  </React.StrictMode>
  );

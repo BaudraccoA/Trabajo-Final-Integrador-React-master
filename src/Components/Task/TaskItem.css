@@ -15,3 +15,28 @@
   .tarea-x{
     color: rgb(219, 109, 109);
   }
+
+  .delete-confirmation{
+    border:none;
+    padding:1px;
+    text-align:center;
+    cursor:pointer;
+    font-size: 15px;
+    border-radius: 10px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Media query para pantallas más pequeñas */
+@media only screen and (max-width: 600px) {
+  .delete-confirmation {
+    height:auto;
+  }
+}
+
+/* Estilos para los botones */
+.delete-confirmation button {
+  width: 20%; /* Los botones ocupan todo el ancho */
+}
